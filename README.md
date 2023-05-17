@@ -19,6 +19,8 @@ Notice: I think it may seems a bit odd to compare a UI design tool and Redux whi
 
 Had not enough time to write test, at least not at the defined time box. So basically I just did it after ward. you can ignore them.
 
+## Initial state of my mind
+
 I am not sure about the way I did test my component. I sincerely appreciate it if you could share your expertise with me. So what I did basically is that I check if the MUI class is in the class attribute or not, like this:
 
 ```ts
@@ -51,3 +53,9 @@ Here is the github repo: <https://github.com/kasir-barati/coding-challenge>
 TODO: Am I testing the right way? or should I test useState and content myself to that BTW I am not convinced that this is a bad test since I do not care about states here, I mean I wanna test my react app state somewhere else not here, At least that's how I think ATM.
 
 https://stackoverflow.com/questions/53389956/how-to-test-a-classname-with-the-jest-and-react-testing-library
+
+## Conclusion
+
+1. Do not test states, instead test what use sees -- [ref](https://stackoverflow.com/a/60109830/8784518).
+2. Use more specific conditions to select the right element -- e.x. `btn.innerHTML.includes('PURCHASED')`
+3. You cannot avoid using MUI classes since we wanna check [what user is seeing when they click on button](https://youtu.be/JKOwJUM4_RM?t=305).

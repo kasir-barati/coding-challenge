@@ -14,11 +14,11 @@ describe(Projects.name, () => {
 
     it(`should change the purchase button color after click`, () => {
         render(<Projects />);
-        const button = screen.getAllByRole('button')[0];
-        fireEvent.click(button);
+        const button = screen
+            .getAllByRole('button')
+            .find((button) => button.innerHTML.includes('purchase'));
+        fireEvent.click(button!);
 
-        // TODO: Am I testing the right way? or should I test useState and content myself to that BTW I am not convinced that this is a bad test since I do not care about states here, I mean I wanna test my react app state somewhere else not here, At least that's how I think ATM.
-        // https://stackoverflow.com/questions/53389956/how-to-test-a-classname-with-the-jest-and-react-testing-library
         expect(
             screen
                 .getAllByRole('button')
@@ -28,15 +28,20 @@ describe(Projects.name, () => {
                     ),
                 ),
         ).toBeTruthy();
+        expect(
+            screen
+                .getAllByRole('button')
+                .find((btn) => btn.innerHTML.includes('PURCHASED')),
+        ).toBeTruthy();
     });
 
     it('should change the purchase button color to its normal after double click', () => {
         render(<Projects />);
-        const button = screen.getAllByRole('button')[0];
-        fireEvent.doubleClick(button);
+        const button = screen
+            .getAllByRole('button')
+            .find((button) => button.innerHTML.includes('purchase'));
+        fireEvent.doubleClick(button!);
 
-        // TODO: Am I testing the right way? or should I test useState and content myself to that BTW I am not convinced that this is a bad test since I do not care about states here, I mean I wanna test my react app state somewhere else not here, At least that's how I think ATM.
-        // https://stackoverflow.com/questions/53389956/how-to-test-a-classname-with-the-jest-and-react-testing-library
         expect(
             screen
                 .getAllByRole('button')
@@ -45,6 +50,11 @@ describe(Projects.name, () => {
                         'MuiButton-containedPrimary',
                     ),
                 ),
+        ).toBeTruthy();
+        expect(
+            screen
+                .getAllByRole('button')
+                .find((btn) => btn.innerHTML.includes('purchase')),
         ).toBeTruthy();
     });
 });

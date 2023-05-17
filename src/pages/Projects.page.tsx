@@ -137,7 +137,9 @@ export function Projects() {
                                             }
                                             sx={{ borderRadius: 100 }}
                                         >
-                                            purchase
+                                            {projectPurchaseState?.isPurchased
+                                                ? 'PURCHASED'
+                                                : 'purchase'}
                                         </Button>
                                     </CardActions>
                                 </Card>

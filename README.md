@@ -47,3 +47,7 @@ Any idea on how I can write more UI design tool agnostic tests, I mean the test 
 Here is the github repo: <https://github.com/kasir-barati/coding-challenge>
 
 \* The thing is that even with that fact in mind I still need to know the color code or color name, So basically I think that point make no difference in the result. Besides moving away from MUI to something like tailwind is not a decision you would make overnight. All in all I think my approach can be improved regardless of all I wrote.
+
+TODO: Am I testing the right way? or should I test useState and content myself to that BTW I am not convinced that this is a bad test since I do not care about states here, I mean I wanna test my react app state somewhere else not here, At least that's how I think ATM.
+
+https://stackoverflow.com/questions/53389956/how-to-test-a-classname-with-the-jest-and-react-testing-library
